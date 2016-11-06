@@ -4,7 +4,21 @@
 @{
     ViewBag.Title = "Index";
 }
+<style>
+    table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+}
+    td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
 
+tr:nth-child(even) {
+    background-color: #FFC0CB;
+}
+</style>
 <h2>Attendance</h2>
 
 @*<p>
@@ -24,7 +38,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Day)
             </th>
-            <th></th>
         </tr>
 
     @foreach (var item in Model) {
