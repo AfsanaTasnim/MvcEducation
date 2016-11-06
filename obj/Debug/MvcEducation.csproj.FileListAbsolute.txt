@@ -80,3 +80,7 @@ E:\Projects\MvcEducation\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\Projects\MvcEducation\obj\Debug\MvcEducation.csprojResolveAssemblyReference.cache
 E:\Projects\MvcEducation\obj\Debug\MvcEducation.dll
 E:\Projects\MvcEducation\obj\Debug\MvcEducation.pdb
+E:\Projects\MvcEducation\obj\Debug\MvcEducation.Migrations.InitialCreate.resources
+E:\Projects\MvcEducation\obj\Debug\MvcEducation.csproj.GenerateResource.Cache
+E:\Projects\MvcEducation\obj\Debug\MvcEducation.Migrations.mg.resources
+E:\Projects\MvcEducation\obj\Debug\MvcEducation.Migrations.mg2.resources

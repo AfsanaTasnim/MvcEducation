@@ -14,9 +14,11 @@ namespace MvcEducation.Models
         public string Email { get; set; }
         public int Phone { get; set; }
     }
-
+    /*
     public class InfoDBContext : DbContext
     {
         public DbSet<Info> Infos { get; set; }    
     }
+    */
+
 }

@@ -7,109 +7,110 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MvcEducation.Models;
+
 namespace MvcEducation.Controllers
 {
-    public class InfosController : Controller
+    public class AttendanceController : Controller
     {
         private InfoDBContext db = new InfoDBContext();
 
-        // GET: Infos
+        // GET: Attendance
         public ActionResult Index()
         {
-            return View(db.Infos.ToList());
+            return View(db.Attendances.ToList());
         }
 
-        // GET: Infos/Details/5
+        // GET: Attendance/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Info info = db.Infos.Find(id);
-            if (info == null)
+            Attendance attendance = db.Attendances.Find(id);
+            if (attendance == null)
             {
                 return HttpNotFound();
             }
-            return View(info);
+            return View(attendance);
         }
 
-        // GET: Infos/Create
+        // GET: Attendance/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Infos/Create
+        // POST: Attendance/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Roll,Name,Email,Phone")] Info info)
+        public ActionResult Create([Bind(Include = "ID,Day")] Attendance attendance)
         {
             if (ModelState.IsValid)
             {
-                db.Infos.Add(info);
+                db.Attendances.Add(attendance);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(info);
+            return View(attendance);
         }
 
-        // GET: Infos/Edit/5
+        // GET: Attendance/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Info info = db.Infos.Find(id);
-            if (info == null)
+            Attendance attendance = db.Attendances.Find(id);
+            if (attendance == null)
             {
                 return HttpNotFound();
             }
-            return View(info);
+            return View(attendance);
         }
 
-        // POST: Infos/Edit/5
+        // POST: Attendance/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Roll,Name,Email,Phone")] Info info)
+        public ActionResult Edit([Bind(Include = "ID,Day")] Attendance attendance)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(info).State = EntityState.Modified;
+                db.Entry(attendance).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(info);
+            return View(attendance);
         }
 
-        // GET: Infos/Delete/5
+        // GET: Attendance/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Info info = db.Infos.Find(id);
-            if (info == null)
+            Attendance attendance = db.Attendances.Find(id);
+            if (attendance == null)
             {
                 return HttpNotFound();
             }
-            return View(info);
+            return View(attendance);
         }
 
-        // POST: Infos/Delete/5
+        // POST: Attendance/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Info info = db.Infos.Find(id);
-            db.Infos.Remove(info);
+            Attendance attendance = db.Attendances.Find(id);
+            db.Attendances.Remove(attendance);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
