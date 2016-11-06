@@ -7,7 +7,7 @@ namespace MvcEducation.Models
 {
     public class Attendance
     {
-        public int Student_id { get; set; }
-        public int day { get; set; }
+        public int ID { get; set; }
+        public int Day { get; set; }
     }
 }
